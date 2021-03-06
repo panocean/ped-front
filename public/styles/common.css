@@ -1,0 +1,24 @@
+.flex-r{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-c{
+  display: flex;
+  flex-direction: column;
+}
+
+.center-first{
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.center-c{
+  justify-content: center;
+  align-items: center;
+}
+
+
+.r-mono{
+  font-family: 'Roboto Mono', monospace;
+}

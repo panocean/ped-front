@@ -1,0 +1,22 @@
+/* :root{
+  --tailwind: #111827;
+  --newcross:  #111d5e;
+} */
+
+
+.tailwind {
+  background-color: #111827;
+}
+
+.newcross {
+  background-color: #111d5e;
+}
+
+.theme-lb{
+  background-color: #0a043c;
+}
+
+.table-blue{
+  background-color: #153e90
+}
+
