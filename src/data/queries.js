@@ -1,6 +1,11 @@
+const url = "https://ped-back.herokuapp.com"
+
+
+
+
 export async function getProductionSalesVolumePerYear(data = {}) {
   try {
-    let response = await fetch("http://localhost:4000/plans/year/salesvolume", {
+    let response = await fetch(`${url}/plans/year/salesvolume`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
@@ -18,7 +23,7 @@ export async function getProductionSalesVolumePerYear(data = {}) {
 
 export async function getRevenuePerYear(data = {}) {
   try {
-    let response = await fetch("http://localhost:4000/plans/year/revenue", {
+    let response = await fetch(`${url}/plans/year/revenue`, {
       method: 'POST',
       cache: "no-cache",
       headers: {
@@ -37,7 +42,7 @@ export async function getRevenuePerYear(data = {}) {
 
 export async function getExpensePerYear(data = {}) {
   try {
-    let response = await fetch("http://localhost:4000/plans/year/expense", {
+    let response = await fetch(`${url}/plans/year/expense`, {
       method: 'POST',
       cache: "no-cache",
       headers: {
@@ -56,7 +61,7 @@ export async function getExpensePerYear(data = {}) {
 
 export async function getBudgetCostPerYear(data = {}) {
   try {
-    let response = await fetch("http://localhost:4000/plans/year/budget", {
+    let response = await fetch(`${url}/plans/year/budget`, {
       method: 'POST',
       cache: "no-cache",
       headers: {
@@ -75,7 +80,7 @@ export async function getBudgetCostPerYear(data = {}) {
 
 export async function getAllPlans() {
   try {
-    let response = await fetch("http://localhost:4000/plans", {
+    let response = await fetch(`${url}/plans`, {
       method: 'GET',
       cache: "no-cache",
       headers: {
@@ -94,7 +99,7 @@ export async function getAllPlans() {
 
 export async function getTaxPerYear(data = {}) {
   try {
-    let response = await fetch("http://localhost:4000/plans/year/tax", {
+    let response = await fetch(`${url}/plans/year/tax`, {
       method: 'POST',
       cache: "no-cache",
       headers: {
