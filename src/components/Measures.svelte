@@ -8,6 +8,7 @@
     productionSalesVolume,
     totalSalesRevenue,
     totalOperatingExpense,
+    totalTaxes,
     ebt,
     yearParam,
   } from "../store/store";
@@ -17,6 +18,7 @@
     getTotalOperatingExpense,
     getTotalSalesRevenue,
     getEbt,
+    getTotalTaxes
   } from "../data/units.js";
 
   let year;
@@ -33,6 +35,7 @@
     totalOperatingExpense.set(getTotalOperatingExpense(aYearData));
     totalSalesRevenue.set(getTotalSalesRevenue(aYearData));
     ebt.set(getEbt(aYearData));
+    totalTaxes.set(getTotalTaxes(aYearData));
   });
 
   const setParam = async (e) => {
@@ -46,6 +49,7 @@
     totalOperatingExpense.set(getTotalOperatingExpense(aYearData));
     totalSalesRevenue.set(getTotalSalesRevenue(aYearData));
     ebt.set(getEbt(aYearData));
+    totalTaxes.set(getTotalTaxes(aYearData));
   };
 </script>
 
@@ -75,6 +79,7 @@
       unit={"us$/m"}
     />
     <Badge title="Earnings Before Taxes" value={$ebt} unit={"us$/m"} />
+    <Badge title="Total Taxes" value={$totalTaxes} unit={"us$/m"} />
   </section>
 </div>
 

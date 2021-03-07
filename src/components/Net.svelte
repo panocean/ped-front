@@ -1,61 +1,58 @@
 <script>
-  import { onMount } from "svelte";
-  //   import Chartist from "chartist";
+  import { onMount, getContext } from "svelte";
   import Chartist from "chartist";
-
+  import { netIncome } from "../data/units";
   // Chartist.Line
+  export let fullData;
+
+  const { allYears } = getContext("plansdata");
+  const aYearData = (year, values) => values.filter((x) => x.year === year);
+  let yearsMap = new Map();
+  for (const iterator of allYears) {
+    yearsMap.set(iterator, aYearData(iterator, fullData));
+  }
+
+  console.log([...yearsMap].map(([year, data]) => netIncome(data)));
 
   onMount(() => {
     // Initialize a Line chart in the container with the ID chart1
-    let chart = new Chartist.Line(
-      "#chart1",
+    // chart.on("draw", function (data) {
+    var chart = new Chartist.Line(
+      ".ct-chart",
       {
-        labels: [1, 2, 3, 4],
-        series: [[100, 120, 180, 200]],
+        labels: allYears,
+        series: [[...yearsMap].map(([year, data]) => netIncome(data))],
       },
       {
         low: 0,
-        showArea: true,
-        showPoint: false,
+        showArea: false,
+        showPoint: true,
+        fullWidth: true,
       }
     );
 
-    // Initialize a Line chart in the container with the ID chart2
-    // new Chartist.Bar("#chart2", {
-    //   labels: [1, 2, 3, 4],
-    //   series: [[5, 2, 8, 3]],
+    // chart.on("draw", function (data) {
+    //   if (data.type === "line" || data.type === "area") {
+    //     data.element.animate({
+    //       d: {
+    //         begin: 2000 * data.index,
+    //         dur: 2000,
+    //         from: data.path
+    //           .clone()
+    //           .scale(1, 0)
+    //           .translate(0, data.chartRect.height())
+    //           .stringify(),
+    //         to: data.path.clone().stringify(),
+    //         easing: Chartist.Svg.Easing.easeOutQuint,
+    //       },
+    //     });
+    //   }
     // });
-
-    chart.on("draw", function (data) {
-      var chart = new Chartist.Line('.ct-chart', {
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-  series: [
-    [1, 5, 2, 5, 4, 3],
-    [2, 3, 4, 8, 1, 2],
-    [5, 4, 3, 2, 1, 0.5]
-  ]
-}, {
-  low: 0,
-  showArea: true,
-  showPoint: false,
-  fullWidth: true
-});
-
-chart.on('draw', function(data) {
-  if(data.type === 'line' || data.type === 'area') {
-    data.element.animate({
-      d: {
-        begin: 2000 * data.index,
-        dur: 2000,
-        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-        to: data.path.clone().stringify(),
-        easing: Chartist.Svg.Easing.easeOutQuint
-      }
-    });
-  }
-});
-
-    });
+    setTimeout(function () {
+      var path = document.querySelector(".ct-series-a path");
+      var length = path.getTotalLength();
+      console.log(length);
+    }, 3000);
   });
 </script>
 

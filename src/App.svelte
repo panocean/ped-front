@@ -4,6 +4,7 @@
     revenue,
     expense,
     budget,
+    tax,
     plans,
     yearParam,
   } from "./store/store";
@@ -17,12 +18,15 @@
   import Card from "./components/Card.svelte";
   import Net from "./components/Net.svelte";
   import "chartist/dist/chartist.min.css";
+  // import "styles/_my-chartist-settings.scss";
+  // import "chartist/dist/scss/chartist.scss"
  
   import {
     getProductionSalesVolumePerYear,
     getRevenuePerYear,
     getExpensePerYear,
     getBudgetCostPerYear,
+    getTaxPerYear
   } from "./data/queries.js";
 
   let dataParam;
@@ -38,6 +42,7 @@
     revenue.set(getRevenuePerYear({ year: dataParam }));
     expense.set(getExpensePerYear({ year: dataParam }));
     budget.set(getBudgetCostPerYear({ year: dataParam }));
+    tax.set(getTaxPerYear({ year: dataParam }))
   });
 
   const changeParam = (e) => {
@@ -47,6 +52,7 @@
     revenue.set(getRevenuePerYear({ year: dataParam }));
     expense.set(getExpensePerYear({ year: dataParam }));
     budget.set(getBudgetCostPerYear({ year: dataParam }));
+    tax.set(getTaxPerYear({ year: dataParam }))
   };
 </script>
 
@@ -67,14 +73,12 @@
   <main class="flex-r">
     <section class="middle flex-c" >
       <Card>
-          <!-- this is text graph with text data  -->
-        <TopTable/>
+        <TopTable fullData={data}/>
       </Card>
-      <Divider margin=20px />
-      <hr />
+      <Divider margin=30px />
       <Card>
         <!-- this is text graph  -->
-      <Net />
+      <Net fullData={data} />
       </Card>
     </section>
     <Sider on:senddataparam={changeParam} />
@@ -103,6 +107,13 @@
           heading2={dataParam}
         />
       {/await}
+      {#await $tax then data}
+      <PlanTables
+        {data}
+        heading1={"Taxes"}
+        heading2={dataParam}
+      />
+    {/await}
     </section>
   </main>
 {/await}

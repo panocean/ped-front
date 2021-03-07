@@ -14,9 +14,11 @@ export const revenue = writable(genericData());
 export const expense = writable(genericData());
 export const budget = writable(genericData());
 export const plans = writable(getAllPlans());
+export const tax = writable(genericData(0));
 
 export const  productionSalesVolume = writable(0);
 export const totalSalesRevenue = writable(0);
 export const  totalOperatingExpense = writable(0);
+export const totalTaxes = writable(0)
 export const ebt = writable(0);
 export const yearParam = writable(0);

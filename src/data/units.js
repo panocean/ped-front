@@ -40,3 +40,11 @@ const unitTechCost = (thisYear) => {
 export const getEbt = (thisYear) => {
   return  ebidta(thisYear) - thisYear[0].budget_cost_ratios.ppta_schedule_used;
 }
+
+export const getTotalTaxes = (thisYear) => {
+  return thisYear[0].taxes.cita_edu_gas  +  thisYear[0].taxes.ppta_edu_liquids 
+}
+
+export const netIncome = (thisYear) => {
+  return getEbt(thisYear) - getTotalTaxes(thisYear)
+}
