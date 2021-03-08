@@ -143,7 +143,7 @@
   }
 
   main section {
-    height: 90vh;
+    height: auto;
   }
 
   .middle {

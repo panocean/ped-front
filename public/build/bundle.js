@@ -1270,16 +1270,16 @@ var app = (function () {
     			t3 = space();
     			span1 = element("span");
     			t4 = text(/*unit*/ ctx[2]);
-    			attr_dev(p0, "class", "svelte-mkhqqf");
-    			add_location(p0, file$3, 7, 2, 145);
-    			attr_dev(span0, "class", "svelte-mkhqqf");
-    			add_location(span0, file$3, 9, 4, 170);
-    			attr_dev(span1, "class", "unit svelte-mkhqqf");
-    			add_location(span1, file$3, 10, 4, 195);
-    			attr_dev(p1, "class", "svelte-mkhqqf");
-    			add_location(p1, file$3, 8, 2, 162);
-    			attr_dev(div, "class", "badge flex-c svelte-mkhqqf");
-    			add_location(div, file$3, 6, 0, 116);
+    			attr_dev(p0, "class", "svelte-2654hp");
+    			add_location(p0, file$3, 7, 2, 144);
+    			attr_dev(span0, "class", "svelte-2654hp");
+    			add_location(span0, file$3, 9, 4, 169);
+    			attr_dev(span1, "class", "unit svelte-2654hp");
+    			add_location(span1, file$3, 10, 4, 194);
+    			attr_dev(p1, "class", "svelte-2654hp");
+    			add_location(p1, file$3, 8, 2, 161);
+    			attr_dev(div, "class", "badge flex-c svelte-2654hp");
+    			add_location(div, file$3, 6, 0, 115);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7284,11 +7284,11 @@ var app = (function () {
     			info_4.block.c();
     			set_style(span, "display", "none");
     			add_location(span, file$b, 67, 2, 1946);
-    			attr_dev(section0, "class", "middle flex-c svelte-pzsx7b");
+    			attr_dev(section0, "class", "middle flex-c svelte-am45wj");
     			add_location(section0, file$b, 74, 4, 2110);
-    			attr_dev(section1, "class", "last flex-c svelte-pzsx7b");
+    			attr_dev(section1, "class", "last flex-c svelte-am45wj");
     			add_location(section1, file$b, 86, 4, 2434);
-    			attr_dev(main, "class", "flex-r svelte-pzsx7b");
+    			attr_dev(main, "class", "flex-r svelte-am45wj");
     			add_location(main, file$b, 73, 2, 2084);
     		},
     		m: function mount(target, anchor) {
@@ -8112,10 +8112,10 @@ var app = (function () {
     			t2 = space();
     			await_block_anchor = empty();
     			info.block.c();
-    			attr_dev(span, "class", "svelte-pzsx7b");
+    			attr_dev(span, "class", "svelte-am45wj");
     			add_location(span, file$b, 63, 4, 1866);
     			add_location(div0, file$b, 62, 2, 1856);
-    			attr_dev(div1, "class", "app-header r-mono flex-c center-first svelte-pzsx7b");
+    			attr_dev(div1, "class", "app-header r-mono flex-c center-first svelte-am45wj");
     			add_location(div1, file$b, 61, 0, 1802);
     		},
     		l: function claim(nodes) {
