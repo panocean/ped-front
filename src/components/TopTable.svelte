@@ -64,48 +64,74 @@
     graphSlotHeight = document.getElementById("graph-col").offsetHeight;
   });
 
-  function plot() {
-    // d3.select('svg').remove()
-    nv.addGraph({
-      generate: function () {
-        var width = graphSlotWidth,
-          height = graphSlotHeight;
+  // function plot() {
+  //   // d3.select('svg').remove()
+  //   nv.addGraph({
+  //     generate: function () {
+  //       var width = graphSlotWidth,
+  //         height = graphSlotHeight;
 
+  //       var chart = nv.models
+  //         .multiBarChart()
+  //         .width(width)
+  //         .height(height)
+  //         .stacked(true);
+  //       chart.dispatch.on("renderEnd", function () {
+  //         console.log("Render Complete");
+  //       });
+
+  //       var svg = d3.select("#test1 svg").datum(graphs);
+  //       console.log("calling chart");
+  //       svg.transition().duration(0).call(chart);
+
+  //       return chart;
+  //     },
+  //     callback: function (graph) {
+  //       nv.utils.windowResize(function () {
+  //         var width = graphSlotWidth;
+  //         var height = graphSlotHeight;
+  //         graph.width(width).height(height);
+
+  //         d3.select("#test1 svg")
+  //           .attr("width", width)
+  //           .attr("height", height)
+  //           .transition()
+  //           .duration(0)
+  //           .call(graph);
+  //       });
+  //     },
+  //   });
+  // }
+  // plot();
+  // window.addEventListener("resize", function () {
+  //   plot();
+  // });
+
+ 
+    // d3.select('svg').remove()
+    nv.addGraph(
+     function () {
         var chart = nv.models
           .multiBarChart()
-          .width(width)
-          .height(height)
           .stacked(true);
         chart.dispatch.on("renderEnd", function () {
           console.log("Render Complete");
         });
 
-        var svg = d3.select("#test1 svg").datum(graphs);
-        console.log("calling chart");
-        svg.transition().duration(0).call(chart);
+
+        d3.select("#test1 svg")
+        .datum(graphs)
+        .call(chart);
+
+
+        nv.utils.windowResize(function () {
+          chart.update()
+        });
 
         return chart;
-      },
-      callback: function (graph) {
-        nv.utils.windowResize(function () {
-          var width = graphSlotWidth;
-          var height = graphSlotHeight;
-          graph.width(width).height(height);
-
-          d3.select("#test1 svg")
-            .attr("width", width)
-            .attr("height", height)
-            .transition()
-            .duration(0)
-            .call(graph);
-        });
-      },
-    });
-  }
-  plot();
-  window.addEventListener("resize", function () {
-    plot();
-  });
+      }
+    );
+  
 </script>
 
 <!-- {#key unique} -->

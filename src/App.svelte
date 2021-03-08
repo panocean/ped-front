@@ -17,6 +17,7 @@
   import TopTable from "./components/TopTable.svelte";
   import Card from "./components/Card.svelte";
   import Net from "./components/Net.svelte";
+  import Net2 from "./components/Net2.svelte";
   import "chartist/dist/chartist.min.css";
   // import "styles/_my-chartist-settings.scss";
   // import "chartist/dist/scss/chartist.scss"
@@ -78,7 +79,8 @@
       <Divider margin=30px />
       <Card>
         <!-- this is text graph  -->
-      <Net fullData={data} />
+      <!-- <Net fullData={data} /> -->
+      <Net2 fullData={data} />
       </Card>
     </section>
     <Sider on:senddataparam={changeParam} />
