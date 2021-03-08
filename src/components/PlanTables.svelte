@@ -8,7 +8,7 @@
 
 <table class="styled-table">
   <thead>
-    <tr>
+    <tr class="quicksand">
       <th>{heading1}</th>
       <th>{heading2}</th>
     </tr>
@@ -16,7 +16,7 @@
   <tbody>
     {#each Object.entries(data) as [x, y], i}
       {#if i !== 0}
-        <tr>
+        <tr class="robotomono">
           <td>{norMalizeColumn(x)}</td>
           <td>{y === null ? "-" : y}</td>
         </tr>
@@ -36,5 +36,13 @@
 
   tr td:nth-child(2){
     text-align: right;
+  }
+
+  th{
+    font-weight: bold;
+    font-size: 12px;
+  }
+  td{
+    font-size: 12px;
   }
 </style>

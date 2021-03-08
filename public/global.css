@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Roboto+Mono:wght@300;400;600&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import "./styles/table.css";
 @import "./styles/checkboxLabel.css";
 @import "./styles/common.css";
 @import "./styles/colors.css";
+@import "./styles/fonts.css";
 
 :root{
 	--antd: #011529;

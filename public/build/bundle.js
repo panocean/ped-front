@@ -793,12 +793,12 @@ var app = (function () {
     			td1 = element("td");
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(td0, "class", "svelte-tzus96");
-    			add_location(td0, file, 19, 10, 416);
-    			attr_dev(td1, "class", "svelte-tzus96");
-    			add_location(td1, file, 20, 10, 456);
-    			attr_dev(tr, "class", "svelte-tzus96");
-    			add_location(tr, file, 18, 8, 401);
+    			attr_dev(td0, "class", "svelte-1epx9hk");
+    			add_location(td0, file, 19, 10, 453);
+    			attr_dev(td1, "class", "svelte-1epx9hk");
+    			add_location(td1, file, 20, 10, 493);
+    			attr_dev(tr, "class", "robotomono svelte-1epx9hk");
+    			add_location(tr, file, 18, 8, 419);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -899,14 +899,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(th0, "class", "svelte-tzus96");
-    			add_location(th0, file, 11, 6, 250);
-    			attr_dev(th1, "class", "svelte-tzus96");
-    			add_location(th1, file, 12, 6, 276);
-    			attr_dev(tr, "class", "svelte-tzus96");
+    			attr_dev(th0, "class", "svelte-1epx9hk");
+    			add_location(th0, file, 11, 6, 268);
+    			attr_dev(th1, "class", "svelte-1epx9hk");
+    			add_location(th1, file, 12, 6, 294);
+    			attr_dev(tr, "class", "quicksand svelte-1epx9hk");
     			add_location(tr, file, 10, 4, 239);
     			add_location(thead, file, 9, 2, 227);
-    			add_location(tbody, file, 15, 2, 319);
+    			add_location(tbody, file, 15, 2, 337);
     			attr_dev(table, "class", "styled-table");
     			add_location(table, file, 8, 0, 196);
     		},
@@ -2083,10 +2083,10 @@ var app = (function () {
     			div = element("div");
     			svg = svg_element("svg");
     			attr_dev(svg, "class", "svelte-mczlps");
-    			add_location(svg, file$7, 138, 2, 3394);
+    			add_location(svg, file$7, 136, 2, 3301);
     			attr_dev(div, "id", "test1");
     			attr_dev(div, "class", "svelte-mczlps");
-    			add_location(div, file$7, 137, 0, 3375);
+    			add_location(div, file$7, 135, 0, 3282);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

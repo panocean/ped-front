@@ -8,9 +8,7 @@
     getTotalTaxes
   } from "../data/units.js";
 
-  // window.addEventListener("resize", function (e) {
-  //   console.log("resized");
-  // });
+
 
   export let fullData;
   const { allYears} = getContext("plansdata")
