@@ -45,4 +45,12 @@
   td{
     font-size: 12px;
   }
+
+  @media (max-width: 425px) {
+    .styled-table{
+      /* background-color: blue; */
+      font-size: 8px;
+    }
+  }
+
 </style>

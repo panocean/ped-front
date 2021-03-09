@@ -793,11 +793,11 @@ var app = (function () {
     			td1 = element("td");
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(td0, "class", "svelte-1epx9hk");
+    			attr_dev(td0, "class", "svelte-mhusye");
     			add_location(td0, file, 19, 10, 453);
-    			attr_dev(td1, "class", "svelte-1epx9hk");
+    			attr_dev(td1, "class", "svelte-mhusye");
     			add_location(td1, file, 20, 10, 493);
-    			attr_dev(tr, "class", "robotomono svelte-1epx9hk");
+    			attr_dev(tr, "class", "robotomono svelte-mhusye");
     			add_location(tr, file, 18, 8, 419);
     		},
     		m: function mount(target, anchor) {
@@ -899,15 +899,15 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(th0, "class", "svelte-1epx9hk");
+    			attr_dev(th0, "class", "svelte-mhusye");
     			add_location(th0, file, 11, 6, 268);
-    			attr_dev(th1, "class", "svelte-1epx9hk");
+    			attr_dev(th1, "class", "svelte-mhusye");
     			add_location(th1, file, 12, 6, 294);
-    			attr_dev(tr, "class", "quicksand svelte-1epx9hk");
+    			attr_dev(tr, "class", "quicksand svelte-mhusye");
     			add_location(tr, file, 10, 4, 239);
     			add_location(thead, file, 9, 2, 227);
     			add_location(tbody, file, 15, 2, 337);
-    			attr_dev(table, "class", "styled-table");
+    			attr_dev(table, "class", "styled-table svelte-mhusye");
     			add_location(table, file, 8, 0, 196);
     		},
     		l: function claim(nodes) {
@@ -1083,10 +1083,10 @@ var app = (function () {
     			div = element("div");
     			p = element("p");
     			p.textContent = "Make Plan";
-    			attr_dev(p, "class", "svelte-eno6vq");
+    			attr_dev(p, "class", "svelte-2rwwv5");
     			add_location(p, file$1, 7, 4, 176);
     			add_location(div, file$1, 5, 2, 124);
-    			attr_dev(nav, "class", "app-nav r-mono flex-c newcross center-first svelte-eno6vq");
+    			attr_dev(nav, "class", "app-nav r-mono flex-c newcross center-first svelte-2rwwv5");
     			add_location(nav, file$1, 4, 0, 64);
     		},
     		l: function claim(nodes) {
@@ -1270,15 +1270,15 @@ var app = (function () {
     			t3 = space();
     			span1 = element("span");
     			t4 = text(/*unit*/ ctx[2]);
-    			attr_dev(p0, "class", "svelte-2654hp");
+    			attr_dev(p0, "class", "svelte-15e432a");
     			add_location(p0, file$3, 7, 2, 144);
-    			attr_dev(span0, "class", "svelte-2654hp");
+    			attr_dev(span0, "class", "svelte-15e432a");
     			add_location(span0, file$3, 9, 4, 169);
-    			attr_dev(span1, "class", "unit svelte-2654hp");
+    			attr_dev(span1, "class", "unit svelte-15e432a");
     			add_location(span1, file$3, 10, 4, 194);
-    			attr_dev(p1, "class", "svelte-2654hp");
+    			attr_dev(p1, "class", "svelte-15e432a");
     			add_location(p1, file$3, 8, 2, 161);
-    			attr_dev(div, "class", "badge flex-c svelte-2654hp");
+    			attr_dev(div, "class", "badge flex-c svelte-15e432a");
     			add_location(div, file$3, 6, 0, 115);
     		},
     		l: function claim(nodes) {
@@ -1750,10 +1750,10 @@ var app = (function () {
     			t8 = space();
     			create_component(badge4.$$.fragment);
     			add_location(span, file$5, 56, 2, 1467);
-    			attr_dev(section0, "class", "inputs svelte-ujgkii");
+    			attr_dev(section0, "class", "inputs svelte-1jz4z38");
     			add_location(section0, file$5, 58, 2, 1510);
     			add_location(div0, file$5, 55, 0, 1459);
-    			attr_dev(section1, "class", "badges");
+    			attr_dev(section1, "class", "badges svelte-1jz4z38");
     			add_location(section1, file$5, 64, 2, 1636);
     			add_location(div1, file$5, 62, 0, 1614);
     		},
@@ -1989,7 +1989,7 @@ var app = (function () {
     const file$6 = "src/components/Sider.svelte";
 
     function create_fragment$6(ctx) {
-    	let section;
+    	let div;
     	let measure;
     	let current;
     	measure = new Measures({ $$inline: true });
@@ -1997,17 +1997,16 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			section = element("section");
+    			div = element("div");
     			create_component(measure.$$.fragment);
-    			attr_dev(section, "class", "sider svelte-dnui1w");
-    			add_location(section, file$6, 5, 2, 66);
+    			add_location(div, file$6, 5, 2, 66);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, section, anchor);
-    			mount_component(measure, section, null);
+    			insert_dev(target, div, anchor);
+    			mount_component(measure, div, null);
     			current = true;
     		},
     		p: noop,
@@ -2021,7 +2020,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section);
+    			if (detaching) detach_dev(div);
     			destroy_component(measure);
     		}
     	};
@@ -7149,9 +7148,10 @@ var app = (function () {
     	let t3;
     	let card1;
     	let t4;
+    	let section1;
     	let sider;
     	let t5;
-    	let section1;
+    	let section2;
     	let promise;
     	let t6;
     	let promise_1;
@@ -7270,9 +7270,10 @@ var app = (function () {
     			t3 = space();
     			create_component(card1.$$.fragment);
     			t4 = space();
+    			section1 = element("section");
     			create_component(sider.$$.fragment);
     			t5 = space();
-    			section1 = element("section");
+    			section2 = element("section");
     			info.block.c();
     			t6 = space();
     			info_1.block.c();
@@ -7284,11 +7285,13 @@ var app = (function () {
     			info_4.block.c();
     			set_style(span, "display", "none");
     			add_location(span, file$b, 67, 2, 1946);
-    			attr_dev(section0, "class", "middle flex-c svelte-am45wj");
+    			attr_dev(section0, "class", "middle flex-c svelte-1do0isb");
     			add_location(section0, file$b, 74, 4, 2110);
-    			attr_dev(section1, "class", "last flex-c svelte-am45wj");
-    			add_location(section1, file$b, 86, 4, 2434);
-    			attr_dev(main, "class", "flex-r svelte-am45wj");
+    			attr_dev(section1, "class", "sider svelte-1do0isb");
+    			add_location(section1, file$b, 85, 4, 2389);
+    			attr_dev(section2, "class", "last flex-c svelte-1do0isb");
+    			add_location(section2, file$b, 90, 4, 2487);
+    			attr_dev(main, "class", "flex-r svelte-1do0isb");
     			add_location(main, file$b, 73, 2, 2084);
     		},
     		m: function mount(target, anchor) {
@@ -7303,27 +7306,28 @@ var app = (function () {
     			append_dev(section0, t3);
     			mount_component(card1, section0, null);
     			append_dev(main, t4);
-    			mount_component(sider, main, null);
-    			append_dev(main, t5);
     			append_dev(main, section1);
-    			info.block.m(section1, info.anchor = null);
-    			info.mount = () => section1;
+    			mount_component(sider, section1, null);
+    			append_dev(main, t5);
+    			append_dev(main, section2);
+    			info.block.m(section2, info.anchor = null);
+    			info.mount = () => section2;
     			info.anchor = t6;
-    			append_dev(section1, t6);
-    			info_1.block.m(section1, info_1.anchor = null);
-    			info_1.mount = () => section1;
+    			append_dev(section2, t6);
+    			info_1.block.m(section2, info_1.anchor = null);
+    			info_1.mount = () => section2;
     			info_1.anchor = t7;
-    			append_dev(section1, t7);
-    			info_2.block.m(section1, info_2.anchor = null);
-    			info_2.mount = () => section1;
+    			append_dev(section2, t7);
+    			info_2.block.m(section2, info_2.anchor = null);
+    			info_2.mount = () => section2;
     			info_2.anchor = t8;
-    			append_dev(section1, t8);
-    			info_3.block.m(section1, info_3.anchor = null);
-    			info_3.mount = () => section1;
+    			append_dev(section2, t8);
+    			info_3.block.m(section2, info_3.anchor = null);
+    			info_3.mount = () => section2;
     			info_3.anchor = t9;
-    			append_dev(section1, t9);
-    			info_4.block.m(section1, info_4.anchor = null);
-    			info_4.mount = () => section1;
+    			append_dev(section2, t9);
+    			info_4.block.m(section2, info_4.anchor = null);
+    			info_4.mount = () => section2;
     			info_4.anchor = null;
     			current = true;
     		},
@@ -7590,7 +7594,7 @@ var app = (function () {
     	return block;
     }
 
-    // (88:34)          <PlanTables           {data}
+    // (92:34)          <PlanTables           {data}
     function create_then_block_5(ctx) {
     	let plantables;
     	let current;
@@ -7636,7 +7640,7 @@ var app = (function () {
     		block,
     		id: create_then_block_5.name,
     		type: "then",
-    		source: "(88:34)          <PlanTables           {data}",
+    		source: "(92:34)          <PlanTables           {data}",
     		ctx
     	});
 
@@ -7687,7 +7691,7 @@ var app = (function () {
     	return block;
     }
 
-    // (95:33)          <PlanTables {data}
+    // (99:33)          <PlanTables {data}
     function create_then_block_4(ctx) {
     	let plantables;
     	let current;
@@ -7733,7 +7737,7 @@ var app = (function () {
     		block,
     		id: create_then_block_4.name,
     		type: "then",
-    		source: "(95:33)          <PlanTables {data}",
+    		source: "(99:33)          <PlanTables {data}",
     		ctx
     	});
 
@@ -7784,7 +7788,7 @@ var app = (function () {
     	return block;
     }
 
-    // (98:33)          <PlanTables           {data}
+    // (102:33)          <PlanTables           {data}
     function create_then_block_3(ctx) {
     	let plantables;
     	let current;
@@ -7830,7 +7834,7 @@ var app = (function () {
     		block,
     		id: create_then_block_3.name,
     		type: "then",
-    		source: "(98:33)          <PlanTables           {data}",
+    		source: "(102:33)          <PlanTables           {data}",
     		ctx
     	});
 
@@ -7881,7 +7885,7 @@ var app = (function () {
     	return block;
     }
 
-    // (105:32)          <PlanTables           {data}
+    // (109:32)          <PlanTables           {data}
     function create_then_block_2(ctx) {
     	let plantables;
     	let current;
@@ -7927,7 +7931,7 @@ var app = (function () {
     		block,
     		id: create_then_block_2.name,
     		type: "then",
-    		source: "(105:32)          <PlanTables           {data}",
+    		source: "(109:32)          <PlanTables           {data}",
     		ctx
     	});
 
@@ -7978,7 +7982,7 @@ var app = (function () {
     	return block;
     }
 
-    // (112:29)        <PlanTables         {data}
+    // (116:29)        <PlanTables         {data}
     function create_then_block_1(ctx) {
     	let plantables;
     	let current;
@@ -8024,7 +8028,7 @@ var app = (function () {
     		block,
     		id: create_then_block_1.name,
     		type: "then",
-    		source: "(112:29)        <PlanTables         {data}",
+    		source: "(116:29)        <PlanTables         {data}",
     		ctx
     	});
 
@@ -8112,10 +8116,10 @@ var app = (function () {
     			t2 = space();
     			await_block_anchor = empty();
     			info.block.c();
-    			attr_dev(span, "class", "svelte-am45wj");
+    			attr_dev(span, "class", "svelte-1do0isb");
     			add_location(span, file$b, 63, 4, 1866);
     			add_location(div0, file$b, 62, 2, 1856);
-    			attr_dev(div1, "class", "app-header r-mono flex-c center-first svelte-am45wj");
+    			attr_dev(div1, "class", "app-header r-mono flex-c center-first svelte-1do0isb");
     			add_location(div1, file$b, 61, 0, 1802);
     		},
     		l: function claim(nodes) {

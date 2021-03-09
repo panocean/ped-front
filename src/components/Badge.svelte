@@ -19,6 +19,9 @@
     margin-top: 15px;
     border-radius: 3px;
     margin-bottom: 15px;
+    margin-right: 7px;
+    /* border: 2px solid purple; */
+    
   }
 
   .badge p:nth-child(1) {
@@ -46,4 +49,14 @@
     font-size: 13px;
     font-style: italic;
   }
+
+  @media (max-width: 425px) {
+  
+
+    .badge{
+      max-width: 55px;
+    }
+  }
+
+  /* max-width: 55px; */
 </style>

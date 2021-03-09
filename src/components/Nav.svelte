@@ -15,6 +15,7 @@
     color: white;
     margin: unset;
     height: 50px;
+    width: 100%;
     padding-left: 15px;
     font-weight: 900;
   }

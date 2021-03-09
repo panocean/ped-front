@@ -87,4 +87,19 @@
     .inputs {
     margin-top: 10px;
   }
+
+   @media (max-width: 425px) {
+    main {
+      /* max-width: none; */
+    }
+
+    .badges{
+      /* border: 2px red solid; */
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: center; */
+      /* align-items: flex-start; */
+      text-align: center;
+    }
+  }
 </style>

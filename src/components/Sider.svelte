@@ -3,19 +3,19 @@
 </script>
 
 
-  <section class="sider">
+  <div>
     <Measure on:senddataparam />
-  </section>
+  </div>
 
 
 <style>
-  .sider {
+  /* .sider {
     flex: 1;
     text-align: left;
     margin-right: 10px;
     background-color: white;
     border-radius: 4px;
     padding: 10px;
-  }
+  } */
 
 </style>

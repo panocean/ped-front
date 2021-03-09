@@ -83,7 +83,11 @@
       <Net2 fullData={data} />
       </Card>
     </section>
-    <Sider on:senddataparam={changeParam} />
+    <section class="sider">
+      <Sider on:senddataparam={changeParam} />
+    </section>
+  
+    
     <section class="last flex-c">
       {#await $psVolume then data}
         <PlanTables
@@ -127,6 +131,7 @@
     margin: unset;
     height: 30px;
     padding-left: 15px;
+    width: 100%;
     font-size: 10px;
     box-shadow: 0px 1px 1px 0px rgb(0 0 0 / 28%);
   }
@@ -136,9 +141,9 @@
   }
 
   main {
-    text-align: center;
+    /* text-align: center; */
     padding: 1em;
-    max-width: 240px;
+    /* max-width: 240px; */
     margin: 0 auto;
   }
 
@@ -147,11 +152,20 @@
   }
 
   .middle {
-    flex: 3;
+    flex: 2;
     background-color: white;
     border-radius: 4px;
     margin-right: 10px;
     padding: 10px 
+  }
+
+  .sider {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
   }
 
   .last {
@@ -162,17 +176,37 @@
     padding: 5px 20px;
   }
 
-  hr{
+  /* hr{
     color: red;
     height: 1rem;
     height: 0.09rem;
     border: none;
     margin: unset;
-  }
+  } */
 
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     main {
       max-width: none;
+    }
+  } */
+
+  @media (max-width:425px) {
+    main {
+
+      /* max-width: none; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+   
+    main section {
+      width: 70vw;
+      margin-bottom: 40px;
+    }
+
+    .sider{
+      order: -1
     }
   }
 </style>
