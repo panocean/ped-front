@@ -1075,16 +1075,11 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let nav;
     	let div;
-    	let p;
 
     	const block = {
     		c: function create() {
     			nav = element("nav");
     			div = element("div");
-    			p = element("p");
-    			p.textContent = "Make Plan";
-    			attr_dev(p, "class", "svelte-2rwwv5");
-    			add_location(p, file$1, 7, 4, 176);
     			add_location(div, file$1, 5, 2, 124);
     			attr_dev(nav, "class", "app-nav r-mono flex-c newcross center-first svelte-2rwwv5");
     			add_location(nav, file$1, 4, 0, 64);
@@ -1095,7 +1090,6 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, nav, anchor);
     			append_dev(nav, div);
-    			append_dev(div, p);
     		},
     		p: noop,
     		i: noop,

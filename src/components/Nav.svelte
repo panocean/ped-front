@@ -5,7 +5,7 @@
 <nav class="app-nav r-mono flex-c newcross center-first">
   <div>
     <!-- <img src={logo} alt="logo"/> -->
-    <p>Make Plan</p>
+    <!-- <p>Make Plan</p> -->
   </div>
 </nav>
 
