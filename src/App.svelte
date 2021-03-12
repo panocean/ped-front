@@ -28,32 +28,34 @@
     getExpensePerYear,
     getBudgetCostPerYear,
     getTaxPerYear
-  } from "./data/queries.js";
+  } from "./data/data";
 
   let dataParam;
-
+  let data
 
 
   $: onMount(async () => {
-    let data = await $plans;
+    data = await $plans;
+    console.log("the data", data)
     dataParam = plansContext(data)[0];
     yearParam.set(dataParam);
 
-    psVolume.set(getProductionSalesVolumePerYear({ year: dataParam }));
-    revenue.set(getRevenuePerYear({ year: dataParam }));
-    expense.set(getExpensePerYear({ year: dataParam }));
-    budget.set(getBudgetCostPerYear({ year: dataParam }));
-    tax.set(getTaxPerYear({ year: dataParam }))
+    psVolume.set(getProductionSalesVolumePerYear(dataParam, data));
+    revenue.set(getRevenuePerYear(dataParam, data));
+    expense.set(getExpensePerYear(dataParam, data));
+    budget.set(getBudgetCostPerYear(dataParam, data));
+    tax.set(getTaxPerYear(dataParam, data))
   });
 
   const changeParam = (e) => {
     dataParam = e.detail.param;
+    console.log("onclick", dataParam)
     yearParam.set(dataParam);
-    psVolume.set(getProductionSalesVolumePerYear({ year: dataParam }));
-    revenue.set(getRevenuePerYear({ year: dataParam }));
-    expense.set(getExpensePerYear({ year: dataParam }));
-    budget.set(getBudgetCostPerYear({ year: dataParam }));
-    tax.set(getTaxPerYear({ year: dataParam }))
+    psVolume.set(getProductionSalesVolumePerYear(dataParam, data));
+    revenue.set(getRevenuePerYear(dataParam, data));
+    expense.set(getExpensePerYear(dataParam, data));
+    budget.set(getBudgetCostPerYear(dataParam, data));
+    tax.set(getTaxPerYear(dataParam, data))
   };
 </script>
 

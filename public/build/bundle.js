@@ -617,85 +617,86 @@ var app = (function () {
         return { set, update, subscribe };
     }
 
-    const url = "https://ped-back.herokuapp.com";
+    // const url = "https://ped-back.herokuapp.com"
+    const url = "http://localhost:4000";
 
 
 
 
-    async function getProductionSalesVolumePerYear(data = {}) {
-      try {
-        let response = await fetch(`${url}/plans/year/salesvolume`, {
-          method: 'POST',
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-        if(!response.ok) throw new Error('Network response was not ok');
-        let output = await response.json();
-        // console.log(output)
-        return output;
-      } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-      }
-    }
+    // export async function getProductionSalesVolumePerYear(data = {}) {
+    //   try {
+    //     let response = await fetch(`${url}/plans/year/salesvolume`, {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-type': 'application/json'
+    //       },
+    //       body: JSON.stringify(data)
+    //     });
+    //     if(!response.ok) throw new Error('Network response was not ok');
+    //     let output = await response.json();
+    //     // console.log(output)
+    //     return output;
+    //   } catch (error) {
+    //     console.error('There has been a problem with your fetch operation:', error);
+    //   }
+    // }
 
-    async function getRevenuePerYear(data = {}) {
-      try {
-        let response = await fetch(`${url}/plans/year/revenue`, {
-          method: 'POST',
-          cache: "no-cache",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-        if(!response.ok) throw new Error('Network response was not ok');
-        let output = await response.json();
-        // console.log(output)
-        return output;
-      } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-      }
-    }
+    // export async function getRevenuePerYear(data = {}) {
+    //   try {
+    //     let response = await fetch(`${url}/plans/year/revenue`, {
+    //       method: 'POST',
+    //       cache: "no-cache",
+    //       headers: {
+    //         'Content-type': 'application/json'
+    //       },
+    //       body: JSON.stringify(data)
+    //     });
+    //     if(!response.ok) throw new Error('Network response was not ok');
+    //     let output = await response.json();
+    //     // console.log(output)
+    //     return output;
+    //   } catch (error) {
+    //     console.error('There has been a problem with your fetch operation:', error);
+    //   }
+    // }
 
-    async function getExpensePerYear(data = {}) {
-      try {
-        let response = await fetch(`${url}/plans/year/expense`, {
-          method: 'POST',
-          cache: "no-cache",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-        if(!response.ok) throw new Error('Network response was not ok');
-        let output = await response.json();
-        // console.log(output)
-        return output;
-      } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-      }
-    }
+    // export async function getExpensePerYear(data = {}) {
+    //   try {
+    //     let response = await fetch(`${url}/plans/year/expense`, {
+    //       method: 'POST',
+    //       cache: "no-cache",
+    //       headers: {
+    //         'Content-type': 'application/json'
+    //       },
+    //       body: JSON.stringify(data)
+    //     });
+    //     if(!response.ok) throw new Error('Network response was not ok');
+    //     let output = await response.json();
+    //     // console.log(output)
+    //     return output;
+    //   } catch (error) {
+    //     console.error('There has been a problem with your fetch operation:', error);
+    //   }
+    // }
 
-    async function getBudgetCostPerYear(data = {}) {
-      try {
-        let response = await fetch(`${url}/plans/year/budget`, {
-          method: 'POST',
-          cache: "no-cache",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-        if(!response.ok) throw new Error('Network response was not ok');
-        let output = await response.json();
-        // console.log(output)
-        return output;
-      } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-      }
-    }
+    // export async function getBudgetCostPerYear(data = {}) {
+    //   try {
+    //     let response = await fetch(`${url}/plans/year/budget`, {
+    //       method: 'POST',
+    //       cache: "no-cache",
+    //       headers: {
+    //         'Content-type': 'application/json'
+    //       },
+    //       body: JSON.stringify(data)
+    //     });
+    //     if(!response.ok) throw new Error('Network response was not ok');
+    //     let output = await response.json();
+    //     // console.log(output)
+    //     return output;
+    //   } catch (error) {
+    //     console.error('There has been a problem with your fetch operation:', error);
+    //   }
+    // }
 
     async function getAllPlans() {
       try {
@@ -716,24 +717,24 @@ var app = (function () {
       }
     }
 
-    async function getTaxPerYear(data = {}) {
-      try {
-        let response = await fetch(`${url}/plans/year/tax`, {
-          method: 'POST',
-          cache: "no-cache",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-        if(!response.ok) throw new Error('Network response was not ok');
-        let output = await response.json();
-        // console.log(output)
-        return output;
-      } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-      }
-    }
+    // export async function getTaxPerYear(data = {}) {
+    //   try {
+    //     let response = await fetch(`${url}/plans/year/tax`, {
+    //       method: 'POST',
+    //       cache: "no-cache",
+    //       headers: {
+    //         'Content-type': 'application/json'
+    //       },
+    //       body: JSON.stringify(data)
+    //     });
+    //     if(!response.ok) throw new Error('Network response was not ok');
+    //     let output = await response.json();
+    //     // console.log(output)
+    //     return output;
+    //   } catch (error) {
+    //     console.error('There has been a problem with your fetch operation:', error);
+    //   }
+    // }
 
     const genericData = () => new Promise(resolve => resolve([]));
 
@@ -7097,7 +7098,39 @@ var app = (function () {
     	}
     }
 
+    // 0: {_id: "603185377644bebddd1d233e", year: 2021, production_sales_volume: {…}, __v: 0, revenue: {…}, …}
+    // 1: {_id: "603187da7644bebddd1d2353", year: 2022, production_sales_volume: {…}, __v: 0, revenue: {…}, …}
+    // 2: {_id: "603189b97644bebddd1d2368", year: 2023, production_sales_volume: {…}, __v: 0, revenue: {…}, …}
+    // 3: {_id: "60318dad7644bebddd1d237d", year: 2024, production_sales_volume: {…}, __v: 0, revenue: {…}, …}
+
+    const getProductionSalesVolumePerYear = (year, data) => {
+       let reducedArray = data.filter(entry => entry.year === year );
+       return reducedArray[0].production_sales_volume
+    };
+
+    const getRevenuePerYear = (year, data) => {
+      let reducedArray = data.filter(entry => entry.year === year );
+       return reducedArray[0].revenue
+    };
+
+    const getExpensePerYear = (year, data) => {
+      let reducedArray = data.filter(entry => entry.year === year );
+       return reducedArray[0].operating_expenses
+    };
+
+    const getBudgetCostPerYear = (year, data) => {
+      let reducedArray = data.filter(entry => entry.year === year );
+       return reducedArray[0].budget_cost_ratios
+    };
+
+    const getTaxPerYear = (year, data) => {
+      let reducedArray = data.filter(entry => entry.year === year );
+       return reducedArray[0].taxes
+    };
+
     /* src/App.svelte generated by Svelte v3.32.3 */
+
+    const { console: console_1$2 } = globals;
 
     const file$b = "src/App.svelte";
 
@@ -7123,13 +7156,13 @@ var app = (function () {
     	return block;
     }
 
-    // (67:25)    <span style="display:none;"     >{setContext("plansdata", {       allYears: plansContext(data),       fullData: data,     }
+    // (69:25)    <span style="display:none;"     >{setContext("plansdata", {       allYears: plansContext(data),       fullData: data,     }
     function create_then_block(ctx) {
     	let span;
 
     	let t0_value = setContext("plansdata", {
-    		allYears: plansContext(/*data*/ ctx[8]),
-    		fullData: /*data*/ ctx[8]
+    		allYears: plansContext(/*data*/ ctx[2]),
+    		fullData: /*data*/ ctx[2]
     	}) + "";
 
     	let t0;
@@ -7179,7 +7212,7 @@ var app = (function () {
     		});
 
     	sider = new Sider({ $$inline: true });
-    	sider.$on("senddataparam", /*changeParam*/ ctx[7]);
+    	sider.$on("senddataparam", /*changeParam*/ ctx[8]);
 
     	let info = {
     		ctx,
@@ -7189,11 +7222,11 @@ var app = (function () {
     		pending: create_pending_block_5,
     		then: create_then_block_5,
     		catch: create_catch_block_4,
-    		value: 8,
+    		value: 2,
     		blocks: [,,,]
     	};
 
-    	handle_promise(promise = /*$psVolume*/ ctx[2], info);
+    	handle_promise(promise = /*$psVolume*/ ctx[3], info);
 
     	let info_1 = {
     		ctx,
@@ -7203,11 +7236,11 @@ var app = (function () {
     		pending: create_pending_block_4,
     		then: create_then_block_4,
     		catch: create_catch_block_3,
-    		value: 8,
+    		value: 2,
     		blocks: [,,,]
     	};
 
-    	handle_promise(promise_1 = /*$revenue*/ ctx[3], info_1);
+    	handle_promise(promise_1 = /*$revenue*/ ctx[4], info_1);
 
     	let info_2 = {
     		ctx,
@@ -7217,11 +7250,11 @@ var app = (function () {
     		pending: create_pending_block_3,
     		then: create_then_block_3,
     		catch: create_catch_block_2,
-    		value: 8,
+    		value: 2,
     		blocks: [,,,]
     	};
 
-    	handle_promise(promise_2 = /*$expense*/ ctx[4], info_2);
+    	handle_promise(promise_2 = /*$expense*/ ctx[5], info_2);
 
     	let info_3 = {
     		ctx,
@@ -7231,11 +7264,11 @@ var app = (function () {
     		pending: create_pending_block_2,
     		then: create_then_block_2,
     		catch: create_catch_block_1,
-    		value: 8,
+    		value: 2,
     		blocks: [,,,]
     	};
 
-    	handle_promise(promise_3 = /*$budget*/ ctx[5], info_3);
+    	handle_promise(promise_3 = /*$budget*/ ctx[6], info_3);
 
     	let info_4 = {
     		ctx,
@@ -7245,11 +7278,11 @@ var app = (function () {
     		pending: create_pending_block_1,
     		then: create_then_block_1,
     		catch: create_catch_block,
-    		value: 8,
+    		value: 2,
     		blocks: [,,,]
     	};
 
-    	handle_promise(promise_4 = /*$tax*/ ctx[6], info_4);
+    	handle_promise(promise_4 = /*$tax*/ ctx[7], info_4);
 
     	const block = {
     		c: function create() {
@@ -7278,15 +7311,15 @@ var app = (function () {
     			t9 = space();
     			info_4.block.c();
     			set_style(span, "display", "none");
-    			add_location(span, file$b, 67, 2, 1946);
+    			add_location(span, file$b, 69, 2, 1978);
     			attr_dev(section0, "class", "middle flex-c svelte-1do0isb");
-    			add_location(section0, file$b, 74, 4, 2110);
+    			add_location(section0, file$b, 76, 4, 2142);
     			attr_dev(section1, "class", "sider svelte-1do0isb");
-    			add_location(section1, file$b, 85, 4, 2389);
+    			add_location(section1, file$b, 87, 4, 2421);
     			attr_dev(section2, "class", "last flex-c svelte-1do0isb");
-    			add_location(section2, file$b, 90, 4, 2487);
+    			add_location(section2, file$b, 92, 4, 2519);
     			attr_dev(main, "class", "flex-r svelte-1do0isb");
-    			add_location(main, file$b, 73, 2, 2084);
+    			add_location(main, file$b, 75, 2, 2116);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -7329,8 +7362,8 @@ var app = (function () {
     			ctx = new_ctx;
 
     			if ((!current || dirty & /*$plans*/ 2) && t0_value !== (t0_value = setContext("plansdata", {
-    				allYears: plansContext(/*data*/ ctx[8]),
-    				fullData: /*data*/ ctx[8]
+    				allYears: plansContext(/*data*/ ctx[2]),
+    				fullData: /*data*/ ctx[2]
     			}) + "")) set_data_dev(t0, t0_value);
 
     			const card0_changes = {};
@@ -7349,41 +7382,41 @@ var app = (function () {
     			card1.$set(card1_changes);
     			info.ctx = ctx;
 
-    			if (dirty & /*$psVolume*/ 4 && promise !== (promise = /*$psVolume*/ ctx[2]) && handle_promise(promise, info)) ; else {
+    			if (dirty & /*$psVolume*/ 8 && promise !== (promise = /*$psVolume*/ ctx[3]) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[8] = info.resolved;
+    				child_ctx[2] = info.resolved;
     				info.block.p(child_ctx, dirty);
     			}
 
     			info_1.ctx = ctx;
 
-    			if (dirty & /*$revenue*/ 8 && promise_1 !== (promise_1 = /*$revenue*/ ctx[3]) && handle_promise(promise_1, info_1)) ; else {
+    			if (dirty & /*$revenue*/ 16 && promise_1 !== (promise_1 = /*$revenue*/ ctx[4]) && handle_promise(promise_1, info_1)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[8] = info_1.resolved;
+    				child_ctx[2] = info_1.resolved;
     				info_1.block.p(child_ctx, dirty);
     			}
 
     			info_2.ctx = ctx;
 
-    			if (dirty & /*$expense*/ 16 && promise_2 !== (promise_2 = /*$expense*/ ctx[4]) && handle_promise(promise_2, info_2)) ; else {
+    			if (dirty & /*$expense*/ 32 && promise_2 !== (promise_2 = /*$expense*/ ctx[5]) && handle_promise(promise_2, info_2)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[8] = info_2.resolved;
+    				child_ctx[2] = info_2.resolved;
     				info_2.block.p(child_ctx, dirty);
     			}
 
     			info_3.ctx = ctx;
 
-    			if (dirty & /*$budget*/ 32 && promise_3 !== (promise_3 = /*$budget*/ ctx[5]) && handle_promise(promise_3, info_3)) ; else {
+    			if (dirty & /*$budget*/ 64 && promise_3 !== (promise_3 = /*$budget*/ ctx[6]) && handle_promise(promise_3, info_3)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[8] = info_3.resolved;
+    				child_ctx[2] = info_3.resolved;
     				info_3.block.p(child_ctx, dirty);
     			}
 
     			info_4.ctx = ctx;
 
-    			if (dirty & /*$tax*/ 64 && promise_4 !== (promise_4 = /*$tax*/ ctx[6]) && handle_promise(promise_4, info_4)) ; else {
+    			if (dirty & /*$tax*/ 128 && promise_4 !== (promise_4 = /*$tax*/ ctx[7]) && handle_promise(promise_4, info_4)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[8] = info_4.resolved;
+    				child_ctx[2] = info_4.resolved;
     				info_4.block.p(child_ctx, dirty);
     			}
     		},
@@ -7463,20 +7496,20 @@ var app = (function () {
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(67:25)    <span style=\\\"display:none;\\\"     >{setContext(\\\"plansdata\\\", {       allYears: plansContext(data),       fullData: data,     }",
+    		source: "(69:25)    <span style=\\\"display:none;\\\"     >{setContext(\\\"plansdata\\\", {       allYears: plansContext(data),       fullData: data,     }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:6) <Card>
+    // (78:6) <Card>
     function create_default_slot_1(ctx) {
     	let toptable;
     	let current;
 
     	toptable = new TopTable({
-    			props: { fullData: /*data*/ ctx[8] },
+    			props: { fullData: /*data*/ ctx[2] },
     			$$inline: true
     		});
 
@@ -7490,7 +7523,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const toptable_changes = {};
-    			if (dirty & /*$plans*/ 2) toptable_changes.fullData = /*data*/ ctx[8];
+    			if (dirty & /*$plans*/ 2) toptable_changes.fullData = /*data*/ ctx[2];
     			toptable.$set(toptable_changes);
     		},
     		i: function intro(local) {
@@ -7511,20 +7544,20 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(76:6) <Card>",
+    		source: "(78:6) <Card>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (80:6) <Card>
+    // (82:6) <Card>
     function create_default_slot(ctx) {
     	let net2;
     	let current;
 
     	net2 = new Net2({
-    			props: { fullData: /*data*/ ctx[8] },
+    			props: { fullData: /*data*/ ctx[2] },
     			$$inline: true
     		});
 
@@ -7538,7 +7571,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const net2_changes = {};
-    			if (dirty & /*$plans*/ 2) net2_changes.fullData = /*data*/ ctx[8];
+    			if (dirty & /*$plans*/ 2) net2_changes.fullData = /*data*/ ctx[2];
     			net2.$set(net2_changes);
     		},
     		i: function intro(local) {
@@ -7559,7 +7592,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(80:6) <Card>",
+    		source: "(82:6) <Card>",
     		ctx
     	});
 
@@ -7588,14 +7621,14 @@ var app = (function () {
     	return block;
     }
 
-    // (92:34)          <PlanTables           {data}
+    // (94:34)          <PlanTables           {data}
     function create_then_block_5(ctx) {
     	let plantables;
     	let current;
 
     	plantables = new PlanTables({
     			props: {
-    				data: /*data*/ ctx[8],
+    				data: /*data*/ ctx[2],
     				heading1: "Production & Sales Volume ",
     				heading2: /*dataParam*/ ctx[0]
     			},
@@ -7612,7 +7645,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const plantables_changes = {};
-    			if (dirty & /*$psVolume*/ 4) plantables_changes.data = /*data*/ ctx[8];
+    			if (dirty & /*$psVolume*/ 8) plantables_changes.data = /*data*/ ctx[2];
     			if (dirty & /*dataParam*/ 1) plantables_changes.heading2 = /*dataParam*/ ctx[0];
     			plantables.$set(plantables_changes);
     		},
@@ -7634,7 +7667,7 @@ var app = (function () {
     		block,
     		id: create_then_block_5.name,
     		type: "then",
-    		source: "(92:34)          <PlanTables           {data}",
+    		source: "(94:34)          <PlanTables           {data}",
     		ctx
     	});
 
@@ -7685,14 +7718,14 @@ var app = (function () {
     	return block;
     }
 
-    // (99:33)          <PlanTables {data}
+    // (101:33)          <PlanTables {data}
     function create_then_block_4(ctx) {
     	let plantables;
     	let current;
 
     	plantables = new PlanTables({
     			props: {
-    				data: /*data*/ ctx[8],
+    				data: /*data*/ ctx[2],
     				heading1: "Revenue",
     				heading2: /*dataParam*/ ctx[0]
     			},
@@ -7709,7 +7742,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const plantables_changes = {};
-    			if (dirty & /*$revenue*/ 8) plantables_changes.data = /*data*/ ctx[8];
+    			if (dirty & /*$revenue*/ 16) plantables_changes.data = /*data*/ ctx[2];
     			if (dirty & /*dataParam*/ 1) plantables_changes.heading2 = /*dataParam*/ ctx[0];
     			plantables.$set(plantables_changes);
     		},
@@ -7731,7 +7764,7 @@ var app = (function () {
     		block,
     		id: create_then_block_4.name,
     		type: "then",
-    		source: "(99:33)          <PlanTables {data}",
+    		source: "(101:33)          <PlanTables {data}",
     		ctx
     	});
 
@@ -7782,14 +7815,14 @@ var app = (function () {
     	return block;
     }
 
-    // (102:33)          <PlanTables           {data}
+    // (104:33)          <PlanTables           {data}
     function create_then_block_3(ctx) {
     	let plantables;
     	let current;
 
     	plantables = new PlanTables({
     			props: {
-    				data: /*data*/ ctx[8],
+    				data: /*data*/ ctx[2],
     				heading1: "Operating Expenses",
     				heading2: /*dataParam*/ ctx[0]
     			},
@@ -7806,7 +7839,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const plantables_changes = {};
-    			if (dirty & /*$expense*/ 16) plantables_changes.data = /*data*/ ctx[8];
+    			if (dirty & /*$expense*/ 32) plantables_changes.data = /*data*/ ctx[2];
     			if (dirty & /*dataParam*/ 1) plantables_changes.heading2 = /*dataParam*/ ctx[0];
     			plantables.$set(plantables_changes);
     		},
@@ -7828,7 +7861,7 @@ var app = (function () {
     		block,
     		id: create_then_block_3.name,
     		type: "then",
-    		source: "(102:33)          <PlanTables           {data}",
+    		source: "(104:33)          <PlanTables           {data}",
     		ctx
     	});
 
@@ -7879,14 +7912,14 @@ var app = (function () {
     	return block;
     }
 
-    // (109:32)          <PlanTables           {data}
+    // (111:32)          <PlanTables           {data}
     function create_then_block_2(ctx) {
     	let plantables;
     	let current;
 
     	plantables = new PlanTables({
     			props: {
-    				data: /*data*/ ctx[8],
+    				data: /*data*/ ctx[2],
     				heading1: "Budget & Cost Ratios",
     				heading2: /*dataParam*/ ctx[0]
     			},
@@ -7903,7 +7936,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const plantables_changes = {};
-    			if (dirty & /*$budget*/ 32) plantables_changes.data = /*data*/ ctx[8];
+    			if (dirty & /*$budget*/ 64) plantables_changes.data = /*data*/ ctx[2];
     			if (dirty & /*dataParam*/ 1) plantables_changes.heading2 = /*dataParam*/ ctx[0];
     			plantables.$set(plantables_changes);
     		},
@@ -7925,7 +7958,7 @@ var app = (function () {
     		block,
     		id: create_then_block_2.name,
     		type: "then",
-    		source: "(109:32)          <PlanTables           {data}",
+    		source: "(111:32)          <PlanTables           {data}",
     		ctx
     	});
 
@@ -7976,14 +8009,14 @@ var app = (function () {
     	return block;
     }
 
-    // (116:29)        <PlanTables         {data}
+    // (118:29)        <PlanTables         {data}
     function create_then_block_1(ctx) {
     	let plantables;
     	let current;
 
     	plantables = new PlanTables({
     			props: {
-    				data: /*data*/ ctx[8],
+    				data: /*data*/ ctx[2],
     				heading1: "Taxes",
     				heading2: /*dataParam*/ ctx[0]
     			},
@@ -8000,7 +8033,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const plantables_changes = {};
-    			if (dirty & /*$tax*/ 64) plantables_changes.data = /*data*/ ctx[8];
+    			if (dirty & /*$tax*/ 128) plantables_changes.data = /*data*/ ctx[2];
     			if (dirty & /*dataParam*/ 1) plantables_changes.heading2 = /*dataParam*/ ctx[0];
     			plantables.$set(plantables_changes);
     		},
@@ -8022,7 +8055,7 @@ var app = (function () {
     		block,
     		id: create_then_block_1.name,
     		type: "then",
-    		source: "(116:29)        <PlanTables         {data}",
+    		source: "(118:29)        <PlanTables         {data}",
     		ctx
     	});
 
@@ -8093,7 +8126,7 @@ var app = (function () {
     		pending: create_pending_block,
     		then: create_then_block,
     		catch: create_catch_block_5,
-    		value: 8,
+    		value: 2,
     		blocks: [,,,]
     	};
 
@@ -8111,10 +8144,10 @@ var app = (function () {
     			await_block_anchor = empty();
     			info.block.c();
     			attr_dev(span, "class", "svelte-1do0isb");
-    			add_location(span, file$b, 63, 4, 1866);
-    			add_location(div0, file$b, 62, 2, 1856);
+    			add_location(span, file$b, 65, 4, 1898);
+    			add_location(div0, file$b, 64, 2, 1888);
     			attr_dev(div1, "class", "app-header r-mono flex-c center-first svelte-1do0isb");
-    			add_location(div1, file$b, 61, 0, 1802);
+    			add_location(div1, file$b, 63, 0, 1834);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8138,7 +8171,7 @@ var app = (function () {
 
     			if (dirty & /*$plans*/ 2 && promise !== (promise = /*$plans*/ ctx[1]) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[8] = info.resolved;
+    				child_ctx[2] = info.resolved;
     				info.block.p(child_ctx, dirty);
     			}
     		},
@@ -8191,33 +8224,35 @@ var app = (function () {
     	validate_store(plans, "plans");
     	component_subscribe($$self, plans, $$value => $$invalidate(1, $plans = $$value));
     	validate_store(psVolume, "psVolume");
-    	component_subscribe($$self, psVolume, $$value => $$invalidate(2, $psVolume = $$value));
+    	component_subscribe($$self, psVolume, $$value => $$invalidate(3, $psVolume = $$value));
     	validate_store(revenue, "revenue");
-    	component_subscribe($$self, revenue, $$value => $$invalidate(3, $revenue = $$value));
+    	component_subscribe($$self, revenue, $$value => $$invalidate(4, $revenue = $$value));
     	validate_store(expense, "expense");
-    	component_subscribe($$self, expense, $$value => $$invalidate(4, $expense = $$value));
+    	component_subscribe($$self, expense, $$value => $$invalidate(5, $expense = $$value));
     	validate_store(budget, "budget");
-    	component_subscribe($$self, budget, $$value => $$invalidate(5, $budget = $$value));
+    	component_subscribe($$self, budget, $$value => $$invalidate(6, $budget = $$value));
     	validate_store(tax, "tax");
-    	component_subscribe($$self, tax, $$value => $$invalidate(6, $tax = $$value));
+    	component_subscribe($$self, tax, $$value => $$invalidate(7, $tax = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	let dataParam;
+    	let data;
 
     	const changeParam = e => {
     		$$invalidate(0, dataParam = e.detail.param);
+    		console.log("onclick", dataParam);
     		yearParam.set(dataParam);
-    		psVolume.set(getProductionSalesVolumePerYear({ year: dataParam }));
-    		revenue.set(getRevenuePerYear({ year: dataParam }));
-    		expense.set(getExpensePerYear({ year: dataParam }));
-    		budget.set(getBudgetCostPerYear({ year: dataParam }));
-    		tax.set(getTaxPerYear({ year: dataParam }));
+    		psVolume.set(getProductionSalesVolumePerYear(dataParam, data));
+    		revenue.set(getRevenuePerYear(dataParam, data));
+    		expense.set(getExpensePerYear(dataParam, data));
+    		budget.set(getBudgetCostPerYear(dataParam, data));
+    		tax.set(getTaxPerYear(dataParam, data));
     	};
 
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -8245,6 +8280,7 @@ var app = (function () {
     		getBudgetCostPerYear,
     		getTaxPerYear,
     		dataParam,
+    		data,
     		changeParam,
     		$plans,
     		$psVolume,
@@ -8256,6 +8292,7 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("dataParam" in $$props) $$invalidate(0, dataParam = $$props.dataParam);
+    		if ("data" in $$props) $$invalidate(2, data = $$props.data);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -8263,21 +8300,32 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*$plans, dataParam*/ 3) {
+    		if ($$self.$$.dirty & /*$plans, data, dataParam*/ 7) {
     			onMount(async () => {
-    				let data = await $plans;
+    				$$invalidate(2, data = await $plans);
+    				console.log("the data", data);
     				$$invalidate(0, dataParam = plansContext(data)[0]);
     				yearParam.set(dataParam);
-    				psVolume.set(getProductionSalesVolumePerYear({ year: dataParam }));
-    				revenue.set(getRevenuePerYear({ year: dataParam }));
-    				expense.set(getExpensePerYear({ year: dataParam }));
-    				budget.set(getBudgetCostPerYear({ year: dataParam }));
-    				tax.set(getTaxPerYear({ year: dataParam }));
+    				psVolume.set(getProductionSalesVolumePerYear(dataParam, data));
+    				revenue.set(getRevenuePerYear(dataParam, data));
+    				expense.set(getExpensePerYear(dataParam, data));
+    				budget.set(getBudgetCostPerYear(dataParam, data));
+    				tax.set(getTaxPerYear(dataParam, data));
     			});
     		}
     	};
 
-    	return [dataParam, $plans, $psVolume, $revenue, $expense, $budget, $tax, changeParam];
+    	return [
+    		dataParam,
+    		$plans,
+    		data,
+    		$psVolume,
+    		$revenue,
+    		$expense,
+    		$budget,
+    		$tax,
+    		changeParam
+    	];
     }
 
     class App extends SvelteComponentDev {
