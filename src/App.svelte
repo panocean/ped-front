@@ -31,31 +31,37 @@
 
   let dataParam;
   let data;
+  let sortedData;
   let loading = true;
+
+  function normalizeArray(data){
+    return data.sort((a, b) => (a.year > b.year) ? 1 : -1)
+  }
 
   $: onMount(async () => {
     setTimeout(() => (loading = false), 3000);
     data = await $plans;
-    // console.log("the data", data)
-    dataParam = plansContext(data)[0];
+    sortedData = normalizeArray(data)
+    console.log("sorted", data)
+    dataParam = plansContext(sortedData)[0];
     yearParam.set(dataParam);
 
-    psVolume.set(getProductionSalesVolumePerYear(dataParam, data));
-    revenue.set(getRevenuePerYear(dataParam, data));
-    expense.set(getExpensePerYear(dataParam, data));
-    budget.set(getBudgetCostPerYear(dataParam, data));
-    tax.set(getTaxPerYear(dataParam, data));
+    psVolume.set(getProductionSalesVolumePerYear(dataParam, sortedData));
+    revenue.set(getRevenuePerYear(dataParam, sortedData));
+    expense.set(getExpensePerYear(dataParam, sortedData));
+    budget.set(getBudgetCostPerYear(dataParam, sortedData));
+    tax.set(getTaxPerYear(dataParam, sortedData));
   });
 
   const changeParam = (e) => {
     dataParam = e.detail.param;
-    console.log("onclick", dataParam);
+    // console.log("onclick", dataParam);
     yearParam.set(dataParam);
-    psVolume.set(getProductionSalesVolumePerYear(dataParam, data));
-    revenue.set(getRevenuePerYear(dataParam, data));
-    expense.set(getExpensePerYear(dataParam, data));
-    budget.set(getBudgetCostPerYear(dataParam, data));
-    tax.set(getTaxPerYear(dataParam, data));
+    psVolume.set(getProductionSalesVolumePerYear(dataParam, sortedData));
+    revenue.set(getRevenuePerYear(dataParam, sortedData));
+    expense.set(getExpensePerYear(dataParam, sortedData));
+    budget.set(getBudgetCostPerYear(dataParam, sortedData));
+    tax.set(getTaxPerYear(dataParam, sortedData));
   };
 </script>
 
@@ -72,8 +78,8 @@
   {#await $plans then data}
     <span style="display:none;"
       >{setContext("plansdata", {
-        allYears: plansContext(data),
-        fullData: data,
+        allYears: plansContext(normalizeArray(data)),
+        fullData: normalizeArray(data),
       })}</span
     >
     <main class="flex-r">

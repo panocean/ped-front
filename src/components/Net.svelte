@@ -4,9 +4,12 @@
     netIncome
   } from "../data/units.js";
 
- 
-
   export let fullData;
+  // onMount(() => {
+
+  // })
+
+  
   const { allYears } = getContext("plansdata");
 
   const aYearData = (year, values) => values.filter((x) => x.year === year);
@@ -24,6 +27,7 @@
     },
   ];
 
+  console.log("netincome", graphs)
 
   nv.addGraph(function () {
     var chart = nv.models

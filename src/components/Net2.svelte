@@ -24,6 +24,7 @@
     },
   ];
 
+  console.log("netincome", graphs)
 
   nv.addGraph(function () {
     var chart = nv.models
