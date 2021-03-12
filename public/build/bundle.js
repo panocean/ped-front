@@ -617,8 +617,8 @@ var app = (function () {
         return { set, update, subscribe };
     }
 
-    // const url = "https://ped-back.herokuapp.com"
-    const url = "http://localhost:4000";
+    const url = "https://ped-back.herokuapp.com";
+    // const url = "http://localhost:4000"
 
 
 
@@ -6959,10 +6959,10 @@ var app = (function () {
     			div = element("div");
     			svg = svg_element("svg");
     			attr_dev(svg, "class", "svelte-t7rmx2");
-    			add_location(svg, file$a, 60, 2, 1789);
+    			add_location(svg, file$a, 61, 2, 1793);
     			attr_dev(div, "id", "chart");
     			attr_dev(div, "class", "svelte-t7rmx2");
-    			add_location(div, file$a, 59, 0, 1770);
+    			add_location(div, file$a, 60, 0, 1774);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7019,7 +7019,9 @@ var app = (function () {
     		//Show the y-axis
     		//Show the x-axis
 
-    		chart.xAxis.axisLabel("Year").tickFormat(d3.format(",r")); //Chart x-axis settings
+    		chart.xAxis.axisLabel("Year"); //Chart x-axis settings
+
+    		// .tickFormat(d3.format(",r"));
     		chart.yAxis.axisLabel("Income (us$/m)").tickFormat(d3.format(".02f")); //Chart y-axis settings
 
     		/* Done setting the chart up? Time to render it!*/

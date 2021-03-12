@@ -8,6 +8,7 @@
 
   export let fullData;
   const { allYears } = getContext("plansdata");
+
   const aYearData = (year, values) => values.filter((x) => x.year === year);
   let yearsMap = new Map();
   for (const iterator of allYears) {
@@ -35,7 +36,7 @@
       .showXAxis(true); //Show the x-axis
     chart.xAxis //Chart x-axis settings
       .axisLabel("Year")
-      .tickFormat(d3.format(",r"));
+      // .tickFormat(d3.format(",r"));
 
     chart.yAxis //Chart y-axis settings
       .axisLabel("Income (us$/m)")
