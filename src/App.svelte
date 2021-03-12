@@ -1,5 +1,5 @@
 <script>
-  import {    
+  import {
     psVolume,
     revenue,
     expense,
@@ -12,31 +12,31 @@
   import PlanTables from "./components/PlanTables.svelte";
   import Nav from "./components/Nav.svelte";
   import { setContext, onMount } from "svelte";
-   import Divider from "./components/Divider.svelte";
+  import Divider from "./components/Divider.svelte";
   import Sider from "./components/Sider.svelte";
   import TopTable from "./components/TopTable.svelte";
   import Card from "./components/Card.svelte";
   import Net from "./components/Net.svelte";
-  import Net2 from "./components/Net2.svelte";
+  // import Net2 from "./components/Net2.svelte";
   import "chartist/dist/chartist.min.css";
-  // import "styles/_my-chartist-settings.scss";
-  // import "chartist/dist/scss/chartist.scss"
- 
+  import Loader from "./components/Loader.svelte";
+
   import {
     getProductionSalesVolumePerYear,
     getRevenuePerYear,
     getExpensePerYear,
     getBudgetCostPerYear,
-    getTaxPerYear
+    getTaxPerYear,
   } from "./data/data";
 
   let dataParam;
-  let data
-
+  let data;
+  let loading = true;
 
   $: onMount(async () => {
+    setTimeout(() => (loading = false), 3000);
     data = await $plans;
-    console.log("the data", data)
+    // console.log("the data", data)
     dataParam = plansContext(data)[0];
     yearParam.set(dataParam);
 
@@ -44,18 +44,18 @@
     revenue.set(getRevenuePerYear(dataParam, data));
     expense.set(getExpensePerYear(dataParam, data));
     budget.set(getBudgetCostPerYear(dataParam, data));
-    tax.set(getTaxPerYear(dataParam, data))
+    tax.set(getTaxPerYear(dataParam, data));
   });
 
   const changeParam = (e) => {
     dataParam = e.detail.param;
-    console.log("onclick", dataParam)
+    console.log("onclick", dataParam);
     yearParam.set(dataParam);
     psVolume.set(getProductionSalesVolumePerYear(dataParam, data));
     revenue.set(getRevenuePerYear(dataParam, data));
     expense.set(getExpensePerYear(dataParam, data));
     budget.set(getBudgetCostPerYear(dataParam, data));
-    tax.set(getTaxPerYear(dataParam, data))
+    tax.set(getTaxPerYear(dataParam, data));
   };
 </script>
 
@@ -66,65 +66,64 @@
     <span>NEPL CONSOLIDATED PLAN</span>
   </div>
 </div>
-{#await $plans then data}
-  <span style="display:none;"
-    >{setContext("plansdata", {
-      allYears: plansContext(data),
-      fullData: data,
-    })}</span
-  >
-  <main class="flex-r">
-    <section class="middle flex-c" >
-      <Card>
-        <TopTable fullData={data}/>
-      </Card>
-      <Divider margin=30px />
-      <Card>
-        <!-- this is text graph  -->
-      <!-- <Net fullData={data} /> -->
-      <Net2 fullData={data} />
-      </Card>
-    </section>
-    <section class="sider">
-      <Sider on:senddataparam={changeParam} />
-    </section>
-  
-    
-    <section class="last flex-c">
-      {#await $psVolume then data}
-        <PlanTables
-          {data}
-          heading1={"Production & Sales Volume "}
-          heading2={dataParam}
-        />
-      {/await}
-      {#await $revenue then data}
-        <PlanTables {data} heading1={"Revenue"} heading2={dataParam} />
-      {/await}
-      {#await $expense then data}
-        <PlanTables
-          {data}
-          heading1={"Operating Expenses"}
-          heading2={dataParam}
-        />
-      {/await}
-      {#await $budget then data}
-        <PlanTables
-          {data}
-          heading1={"Budget & Cost Ratios"}
-          heading2={dataParam}
-        />
-      {/await}
-      {#await $tax then data}
-      <PlanTables
-        {data}
-        heading1={"Taxes"}
-        heading2={dataParam}
-      />
-    {/await}
-    </section>
-  </main>
-{/await}
+{#if loading}
+  <Loader />
+{:else}
+  {#await $plans then data}
+    <span style="display:none;"
+      >{setContext("plansdata", {
+        allYears: plansContext(data),
+        fullData: data,
+      })}</span
+    >
+    <main class="flex-r">
+      <section class="middle flex-c">
+        <Card>
+          <TopTable fullData={data} />
+        </Card>
+        <Divider margin="30px" />
+        <Card>
+          <!-- this is text graph  -->
+          <!-- <Net fullData={data} /> -->
+          <Net fullData={data} />
+        </Card>
+      </section>
+      <section class="sider">
+        <Sider on:senddataparam={changeParam} />
+      </section>
+
+      <section class="last flex-c">
+        {#await $psVolume then data}
+          <PlanTables
+            {data}
+            heading1={"Production & Sales Volume "}
+            heading2={dataParam}
+          />
+        {/await}
+        {#await $revenue then data}
+          <PlanTables {data} heading1={"Revenue"} heading2={dataParam} />
+        {/await}
+        {#await $expense then data}
+          <PlanTables
+            {data}
+            heading1={"Operating Expenses"}
+            heading2={dataParam}
+          />
+        {/await}
+        {#await $budget then data}
+          <PlanTables
+            {data}
+            heading1={"Budget & Cost Ratios"}
+            heading2={dataParam}
+          />
+        {/await}
+        {#await $tax then data}
+          <PlanTables {data} heading1={"Taxes"} heading2={dataParam} />
+        {/await}
+      </section>
+    </main>
+  {/await}
+{/if}
 
 <style>
   .app-header {
@@ -158,7 +157,7 @@
     background-color: white;
     border-radius: 4px;
     margin-right: 10px;
-    padding: 10px 
+    padding: 10px;
   }
 
   .sider {
@@ -192,23 +191,22 @@
     }
   } */
 
-  @media (max-width:425px) {
+  @media (max-width: 425px) {
     main {
-
       /* max-width: none; */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
-   
+
     main section {
       width: 70vw;
       margin-bottom: 40px;
     }
 
-    .sider{
-      order: -1
+    .sider {
+      order: -1;
     }
   }
 </style>
